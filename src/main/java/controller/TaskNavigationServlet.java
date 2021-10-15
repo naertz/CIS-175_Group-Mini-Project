@@ -38,10 +38,8 @@ public class TaskNavigationServlet extends HttpServlet {
 		
 		String action = request.getParameter("performTaskAction");
 		
-		String path = "/ViewAllTasksServlet";
-		
 		if (action.equals("Add Task")) {
-		    path = "/index.html";
+		    getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		} else if (action.equals("Edit Task")) {
 		    try {
 		        Integer id = Integer.parseInt(request.getParameter("id"));
@@ -50,7 +48,7 @@ public class TaskNavigationServlet extends HttpServlet {
 		        request.setAttribute("month", task.getDueDate().getMonthValue());
 		        request.setAttribute("day", task.getDueDate().getDayOfMonth());
 		        request.setAttribute("year", task.getDueDate().getYear());
-		        path = "/edit-task.jsp";
+		        getServletContext().getRequestDispatcher("/edit-task.jsp").forward(request, response);
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
 		    }
@@ -62,8 +60,8 @@ public class TaskNavigationServlet extends HttpServlet {
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
 		    }
+		    
+		    getServletContext().getRequestDispatcher("/ViewAllTasksServlet").forward(request, response);
 		}
-		
-		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 }
