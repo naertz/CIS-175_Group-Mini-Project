@@ -21,7 +21,7 @@
             <fieldset>
                 <legend>Enter the task's due date:</legend>
                 <input type="text" name="month" placeholder="mm" size="4" value="${month}">
-                <input type="text" name="day" placeholder="dd" size="4" value="${date}">
+                <input type="text" name="day" placeholder="dd" size="4" value="${day}">
                 <input type="text" name="year" placeholder="yyyy" size="4" value="${year}">
             </fieldset>
             <fieldset>

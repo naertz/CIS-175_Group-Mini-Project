@@ -47,6 +47,9 @@ public class TaskNavigationServlet extends HttpServlet {
 		        Integer id = Integer.parseInt(request.getParameter("id"));
 		        Task task = th.searchForTasksById(id);
 		        request.setAttribute("newTask", task);
+		        request.setAttribute("month", task.getDueDate().getMonthValue());
+		        request.setAttribute("day", task.getDueDate().getDayOfMonth());
+		        request.setAttribute("year", task.getDueDate().getYear());
 		        path = "/edit-task.jsp";
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
@@ -63,5 +66,4 @@ public class TaskNavigationServlet extends HttpServlet {
 		
 		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
-
 }
