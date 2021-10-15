@@ -29,19 +29,6 @@ public class TaskHelper {
         return foundTask;
     }
     
-    public List<Task> searchForTasksByName(String name) {
-        EntityManager tasksEM = tasksEMF.createEntityManager();
-        tasksEM.getTransaction().begin();
-        TypedQuery<Task> taskTypedQuery = tasksEM.createQuery("SELECT task FROM Task task WHERE task.name = :selectedName", Task.class);
-        
-        taskTypedQuery.setParameter("selectedName", name);
-        
-        List<Task> taskResults = taskTypedQuery.getResultList();
-        
-        tasksEM.close();
-        return taskResults;
-    }
-    
     public void insertTask(Task task) {
         EntityManager tasksEM = tasksEMF.createEntityManager();
         tasksEM.getTransaction().begin();
