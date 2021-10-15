@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="#">
+        <title>Tasklist - Add Task</title>
+    </head>
+    <body>
+        <h1>Enter a Task:</h1>
+        <form action="AddTaskServlet" method="post">
+            <fieldset>
+                <legend>Enter the person's name this task is assigned to:</legend>
+                <input type="text" name="personName">
+            </fieldset>
+            <fieldset>
+                <legend>Enter the task's name:</legend>
+                <input type="text" name="name">
+            </fieldset>
+            <fieldset>
+                <legend>Enter the task's due date:</legend>
+                <input type="text" name="month" placeholder="mm" size="4">
+                <input type="text" name="day" placeholder="dd" size="4">
+                <input type="text" name="year" placeholder="yyyy" size="4">
+            </fieldset>
+            <fieldset>
+                <legend>Add the Task:</legend>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+    </body>
+</html>
