@@ -8,18 +8,19 @@ package model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="person")
 public class Person {
-    // Instance Variable(s) =====
+    // Instance Variable(s) ===========================
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;       // Id
     private String name;  // Name
-    // ==========================
+    // ================================================
     
     // Constructor(s) ==================
     // Default
