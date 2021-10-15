@@ -42,19 +42,6 @@ public class TaskHelper {
         return taskResults;
     }
     
-    public List<Task> searchForTasksByDate(LocalDate dueDate) {
-        EntityManager tasksEM = tasksEMF.createEntityManager();
-        tasksEM.getTransaction().begin();
-        TypedQuery<Task> taskTypedQuery = tasksEM.createQuery("SELECT task FROM Task task WHERE task.date = :selectedDueDate", Task.class);
-        
-        taskTypedQuery.setParameter("selectedDueDate", dueDate);
-        
-        List<Task> taskResults = taskTypedQuery.getResultList();
-        
-        tasksEM.close();
-        return taskResults;
-    }
-    
     public void insertTask(Task task) {
         EntityManager tasksEM = tasksEMF.createEntityManager();
         tasksEM.getTransaction().begin();
