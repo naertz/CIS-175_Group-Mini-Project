@@ -76,11 +76,9 @@ public class TaskHelper {
     public void deleteTask(Task task) {
         EntityManager tasksEM = tasksEMF.createEntityManager();
         tasksEM.getTransaction().begin();
-        TypedQuery<Task> taskTypedQuery = tasksEM.createQuery("SELECT task FROM Task task WHERE task.person.name = :selectedPersonName AND task.name = :selectedName AND task.date = :selectedDate", Task.class);
+        TypedQuery<Task> taskTypedQuery = tasksEM.createQuery("SELECT task FROM Task task WHERE task.id = :selectedId", Task.class);
         
-        taskTypedQuery.setParameter("selectedPersonName", task.getPerson().getName());
-        taskTypedQuery.setParameter("selectedName", task.getName());
-        taskTypedQuery.setParameter("selectedDueDate", task.getDueDate());
+        taskTypedQuery.setParameter("selectedId", task.getId());
         
         taskTypedQuery.setMaxResults(1);
         
