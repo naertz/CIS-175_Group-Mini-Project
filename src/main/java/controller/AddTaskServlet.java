@@ -59,6 +59,6 @@ public class AddTaskServlet extends HttpServlet {
 		TaskHelper th = new TaskHelper();
 		th.insertTask(task);
 		
-		getServletContext().getRequestDispatcher("index.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 	}
 }
