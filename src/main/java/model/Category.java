@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -22,7 +21,6 @@ public class Category {
     @Id
     @GeneratedValue
     private int id;            // Id
-    @ManyToOne(cascade=CascadeType.PERSIST)
     private String name;       // Name
     @OneToMany(cascade=CascadeType.MERGE, fetch=FetchType.EAGER)
     private List<Task> tasks;  // Tasklist
