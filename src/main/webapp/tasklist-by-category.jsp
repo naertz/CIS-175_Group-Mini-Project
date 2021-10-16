@@ -8,7 +8,7 @@
         <title>Tasklist - Categories</title>
     </head>
     <body>
-        <form method="post" action="CategoryGroupNavigationServlet">
+        <form action="CategoryGroupNavigationServlet" method="post">
             <table>
                 <c:forEach var="currentCategory" items="${requestScope.categories}">
                     <tr>
