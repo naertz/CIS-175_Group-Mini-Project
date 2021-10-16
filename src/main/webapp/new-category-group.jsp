@@ -9,6 +9,7 @@
     </head>
     <body>
         <form action="CreateNewCategoryGroupServlet" method="post">
+            <h1>Enter the Category Group:</h1>
             <fieldset>
                 <legend>Enter the category group's name:</legend>
                 <input type="text" name="name">
