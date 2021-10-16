@@ -17,7 +17,7 @@ import javax.persistence.TypedQuery;
 import model.Person;
 
 public class PersonHelper {
-    static EntityManagerFactory personsEMF = Persistence.createEntityManagerFactory("TasklistPlanner");
+    private static EntityManagerFactory personsEMF = Persistence.createEntityManagerFactory("TasklistPlanner");
     
     public Person findPerson(String name) {
         EntityManager personsEM = personsEMF.createEntityManager();

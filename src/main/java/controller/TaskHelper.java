@@ -16,7 +16,7 @@ import javax.persistence.TypedQuery;
 import model.Task;
 
 public class TaskHelper {
-    static EntityManagerFactory tasksEMF = Persistence.createEntityManagerFactory("TasklistPlanner");
+    private static EntityManagerFactory tasksEMF = Persistence.createEntityManagerFactory("TasklistPlanner");
     
     public Task searchForTasksById(int id) {
         EntityManager tasksEM = tasksEMF.createEntityManager();
