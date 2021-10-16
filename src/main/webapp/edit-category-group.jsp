@@ -9,7 +9,7 @@
     </head>
     <body>
         <h1>Edit the Category Group:</h1>
-        <form action="UpdateHopExperienceServlet" method="post">
+        <form action="EditCategoryGroupServlet" method="post">
             <fieldset>
                 <legend>Enter the category group's name:</legend>
                 <input type="text" name="name" value="${newCategory.name}">
