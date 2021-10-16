@@ -41,7 +41,7 @@ public class CategoryHelper {
         EntityManager categoriesEM = categoriesEMF.createEntityManager();
         categoriesEM.getTransaction().begin();
         
-        categoriesEM.persist(category);
+        categoriesEM.merge(category);
         categoriesEM.getTransaction().commit();
         categoriesEM.close();
     }

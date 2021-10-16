@@ -55,7 +55,7 @@ public class EditCategoryGroupServlet extends HttpServlet {
 		        tasks.add(task);
 		    }
 		} catch (NullPointerException error) {
-		    tasks = category.getTasks();
+		    tasks = new ArrayList<Task>();
 		}
 		category.setTasks(tasks);
 		
