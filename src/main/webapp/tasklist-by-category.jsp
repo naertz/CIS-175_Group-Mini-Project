@@ -17,15 +17,19 @@
                     <tr>
                         <td>Tasklist:</td>
                         <c:forEach var="task" items="${currentCategory.tasks}">
-                            <td>
-                                <h3>${task.name}</h3>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>Assigned to: ${task.person.name}</li>
-                                    <li>Due: ${task.dueDate}</li>
-                                </ul>
-                            </td>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <h3>${task.name}</h3>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Assigned to: ${task.person.name}</li>
+                                            <li>Due: ${task.dueDate}</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
                         </c:forEach>
                     </tr>
                 </c:forEach>
