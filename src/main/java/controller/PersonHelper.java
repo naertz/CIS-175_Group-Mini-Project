@@ -51,7 +51,11 @@ public class PersonHelper {
     
     public List<Person> showAllPersons() {
         EntityManager personsEM = personsEMF.createEntityManager();
-        List<Person> persons = personsEM.createQuery("SELECT person FROM Person person").getResultList();
+        TypedQuery<Person> personTypedQuery = personsEM.createQuery("SELECT person FROM Person person", Person.class);
+        
+        List<Person> persons = personTypedQuery.getResultList();
+        
+        personsEM.close();
         return persons;
     }
 }
