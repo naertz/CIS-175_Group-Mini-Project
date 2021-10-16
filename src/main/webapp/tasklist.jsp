@@ -10,7 +10,7 @@
     <body>
         <form action="TaskNavigationServlet" method="post">
             <table>
-                <c:forEach items="${requestScope.taskList}" var="currentTask">
+                <c:forEach var="currentTask" items="${requestScope.taskList}">
                     <tr>
                         <td><input type="radio" id="task" name="id" value="${currentTask.id}"><label for="task">${currentTask.name}</label></td>
                     </tr>
