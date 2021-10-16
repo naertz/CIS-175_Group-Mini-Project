@@ -52,6 +52,8 @@ public class TaskNavigationServlet extends HttpServlet {
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
 		    }
+		    
+		    getServletContext().getRequestDispatcher("/ViewAllTasksServlet").forward(request, response);
 		} else if (action.equals("Delete Task")) {
 		    try {
 		        int id = Integer.parseInt(request.getParameter("id"));
