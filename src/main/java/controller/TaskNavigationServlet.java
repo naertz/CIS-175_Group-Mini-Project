@@ -42,7 +42,7 @@ public class TaskNavigationServlet extends HttpServlet {
 		    getServletContext().getRequestDispatcher("/index.html").forward(request, response);
 		} else if (action.equals("Edit Task")) {
 		    try {
-		        Integer id = Integer.parseInt(request.getParameter("id"));
+		        int id = Integer.parseInt(request.getParameter("id"));
 		        Task task = th.searchForTasksById(id);
 		        request.setAttribute("newTask", task);
 		        request.setAttribute("month", task.getDueDate().getMonthValue());
@@ -54,7 +54,7 @@ public class TaskNavigationServlet extends HttpServlet {
 		    }
 		} else if (action.equals("Delete Task")) {
 		    try {
-		        Integer id = Integer.parseInt(request.getParameter("id"));
+		        int id = Integer.parseInt(request.getParameter("id"));
 		        Task task = th.searchForTasksById(id);
 		        th.deleteTask(task);
 		    } catch (NumberFormatException error) {

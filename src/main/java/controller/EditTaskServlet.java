@@ -39,7 +39,7 @@ public class EditTaskServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    TaskHelper th = new TaskHelper();
         
-        Integer id = Integer.parseInt(request.getParameter("id"));
+        int id = Integer.parseInt(request.getParameter("id"));
         Task task = th.searchForTasksById(id);
 	    
 	    String personName = request.getParameter("personName");
