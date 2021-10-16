@@ -29,8 +29,10 @@ public class ViewAllTasksServlet extends HttpServlet {
 		
 		request.setAttribute("taskList", th.showAllTasks());
 		
+		String path = "/tasklist.jsp";
+		
 		if (th.showAllTasks().isEmpty()) {
-		    getServletContext().getRequestDispatcher("/index.html").forward(request, response);
+		    path = "/index.html";
 		}
 		
 		getServletContext().getRequestDispatcher("/tasklist.jsp").forward(request, response);

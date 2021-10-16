@@ -51,9 +51,8 @@ public class TaskNavigationServlet extends HttpServlet {
 		        getServletContext().getRequestDispatcher("/edit-task.jsp").forward(request, response);
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
+		        getServletContext().getRequestDispatcher("/ViewAllTasksServlet").forward(request, response);
 		    }
-		    
-		    getServletContext().getRequestDispatcher("/ViewAllTasksServlet").forward(request, response);
 		} else if (action.equals("Delete Task")) {
 		    try {
 		        int id = Integer.parseInt(request.getParameter("id"));
@@ -62,7 +61,6 @@ public class TaskNavigationServlet extends HttpServlet {
 		    } catch (NumberFormatException error) {
 		        System.out.println("Missing task");
 		    }
-		    
 		    getServletContext().getRequestDispatcher("/ViewAllTasksServlet").forward(request, response);
 		}
 	}
